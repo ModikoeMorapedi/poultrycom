@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:poultrycom/views/home_view.dart';
-import 'package:poultrycom/views/login_view.dart';
+import 'package:poultrycom/views/views.dart';
 
 class RoutesUtils {
   static Route<dynamic>? generateRoute(RouteSettings settings) {
@@ -9,6 +8,8 @@ class RoutesUtils {
         return MaterialPageRoute(builder: (_) => const HomeView());
       case '/LoginView':
         return MaterialPageRoute(builder: (_) => const LoginView());
+      case '/RegisterView':
+        return MaterialPageRoute(builder: (_) => const RegisterView());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

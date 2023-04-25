@@ -8,4 +8,8 @@ class LoginViewModel extends ChangeNotifier {
   navigateToHome() {
     _navigationService.navigateTo('/HomeView');
   }
+
+  navigateToRegister() {
+    _navigationService.navigateTo('/RegisterView');
+  }
 }
