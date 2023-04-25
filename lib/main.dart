@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:poultrycom/services/services.dart';
 import 'package:poultrycom/utils/utils.dart';
 import 'package:poultrycom/view_models/login_view_model.dart';
+import 'package:poultrycom/view_models/view_models.dart';
 import 'package:provider/provider.dart';
 
 import 'views/views.dart';
@@ -21,6 +22,8 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider<LoginViewModel>(
               create: (_) => LoginViewModel()),
+          ChangeNotifierProvider<RegisterViewModel>(
+              create: (_) => RegisterViewModel()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
