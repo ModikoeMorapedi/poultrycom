@@ -1,3 +1,4 @@
-export 'package:poultrycom/utils/routes_utils.dart';
-export 'package:poultrycom/utils/string_utils.dart';
+export 'package:poultrycom/utils/routes_util.dart';
+export 'package:poultrycom/utils/strings_util.dart';
 export 'package:poultrycom/utils/service_locator.dart';
+export 'package:poultrycom/utils/data.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:poultrycom/utils/string_utils.dart';
+import 'package:poultrycom/utils/strings_util.dart';
 import 'package:poultrycom/view_models/login_view_model.dart';
 import 'package:provider/provider.dart';
 
