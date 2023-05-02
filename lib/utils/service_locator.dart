@@ -7,6 +7,7 @@ final locator = GetIt.instance;
 void setupLocator() {
   //Services
   locator.registerLazySingleton<NavigationService>(() => NavigationService());
+  locator.registerLazySingleton<NewsService>(() => NewsService());
 
   //View Models
   locator.registerFactory<LoginViewModel>(() => LoginViewModel());

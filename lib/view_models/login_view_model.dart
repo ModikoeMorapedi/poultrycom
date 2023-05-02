@@ -6,7 +6,7 @@ class LoginViewModel extends ChangeNotifier {
   final NavigationService _navigationService = locator<NavigationService>();
 
   navigateToHome() {
-    _navigationService.navigateTo('/HomeView');
+    _navigationService.navigateTo('/BottomNavigationBarWidget');
   }
 
   navigateToRegister() {
