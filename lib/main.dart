@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:poultrycom/services/services.dart';
 import 'package:poultrycom/utils/utils.dart';
 import 'package:poultrycom/view_models/login_view_model.dart';
+import 'package:poultrycom/view_models/news_view_model.dart';
 import 'package:poultrycom/view_models/view_models.dart';
 import 'package:poultrycom/widgets/widgets.dart';
 import 'package:provider/provider.dart';
@@ -25,13 +26,14 @@ class MyApp extends StatelessWidget {
               create: (_) => LoginViewModel()),
           ChangeNotifierProvider<RegisterViewModel>(
               create: (_) => RegisterViewModel()),
+          ChangeNotifierProvider<NewsViewModel>(create: (_) => NewsViewModel()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primarySwatch: Colors.green,
           ),
-          home: const BottomNavigationBarWidget(),
+          home: const LoginView(),
           onGenerateRoute: RoutesUtils.generateRoute,
           navigatorKey: locator<NavigationService>().navigatorKey,
         ));
