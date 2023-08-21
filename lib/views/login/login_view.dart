@@ -6,8 +6,11 @@ import 'package:provider/provider.dart';
 import '../../widgets/widgets.dart';
 
 class LoginView extends StatelessWidget {
-  const LoginView({super.key});
-
+  LoginView({super.key});
+  final TextEditingController _emailController =
+      TextEditingController(text: "Enter email address");
+  final TextEditingController _passwordController =
+      TextEditingController(text: "Enter your password");
   @override
   Widget build(BuildContext context) {
     LoginViewModel loginViewModel = Provider.of<LoginViewModel>(context);
@@ -17,11 +20,11 @@ class LoginView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const TextFormFieldWidget(
-              initialValue: StringUtils.enterEmail,
+            TextFormFieldWidget(
+              textEditingController: _emailController,
             ),
-            const TextFormFieldWidget(
-              initialValue: StringUtils.enterPassword,
+            TextFormFieldWidget(
+              textEditingController: _passwordController,
             ),
             const SizedBox(
               height: 200,
@@ -30,7 +33,8 @@ class LoginView extends StatelessWidget {
               text: StringUtils.login,
               minWidth: MediaQuery.of(context).size.height * 0.4,
               onPressed: () {
-                loginViewModel.navigateToHome();
+                loginViewModel.login(
+                    _emailController.text, _passwordController.text);
               },
             ),
             const SizedBox(

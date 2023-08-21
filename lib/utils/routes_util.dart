@@ -9,9 +9,9 @@ class RoutesUtils {
       case '/HomeView':
         return MaterialPageRoute(builder: (_) => const HomeView());
       case '/LoginView':
-        return MaterialPageRoute(builder: (_) => const LoginView());
+        return MaterialPageRoute(builder: (_) => LoginView());
       case '/RegisterView':
-        return MaterialPageRoute(builder: (_) => const RegisterView());
+        return MaterialPageRoute(builder: (_) => RegisterView());
       case '/BottomNavigationBarWidget':
         return MaterialPageRoute(
             builder: (_) => const BottomNavigationBarWidget());

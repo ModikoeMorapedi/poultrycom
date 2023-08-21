@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:poultrycom/services/news/i_news_service.dart';
 import 'package:poultrycom/services/services.dart';
 
 import '../models/articles_model.dart';
@@ -9,7 +10,7 @@ class NewsViewModel extends ChangeNotifier {
     getNews();
   }
 
-  final NewsService _newsService = locator<NewsService>();
+  final _newsService = locator<INewsService>();
   List<Articles>? _articles;
   bool? _isLoading;
   List<Articles>? get articles => _articles;
@@ -28,8 +29,7 @@ class NewsViewModel extends ChangeNotifier {
     try {
       _isLoading = true;
       final response = await _newsService.getNewsService();
-      _articles = response.articles;
-
+      _articles = response!.articles;
       _isLoading = false;
       notifyListeners();
     } catch (e) {

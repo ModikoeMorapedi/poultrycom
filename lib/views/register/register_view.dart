@@ -5,8 +5,11 @@ import '../../utils/utils.dart';
 import '../../widgets/widgets.dart';
 
 class RegisterView extends StatelessWidget {
-  const RegisterView({super.key});
-
+  RegisterView({super.key});
+  final TextEditingController _emailController =
+      TextEditingController(text: "Enter email address");
+  final TextEditingController _passwordController =
+      TextEditingController(text: "Enter your password");
   @override
   Widget build(BuildContext context) {
     RegisterViewModel registerViewModel =
@@ -17,8 +20,8 @@ class RegisterView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const TextFormFieldWidget(
-              initialValue: StringUtils.enterUsername,
+            TextFormFieldWidget(
+              textEditingController: _emailController,
             ),
             const TextFormFieldWidget(
               initialValue: StringUtils.enterEmail,
@@ -26,8 +29,8 @@ class RegisterView extends StatelessWidget {
             const TextFormFieldWidget(
               initialValue: StringUtils.enterPassword,
             ),
-            const TextFormFieldWidget(
-              initialValue: StringUtils.confirmPassword,
+            TextFormFieldWidget(
+              textEditingController: _passwordController,
             ),
             const SizedBox(
               height: 20,
@@ -36,7 +39,8 @@ class RegisterView extends StatelessWidget {
               text: StringUtils.register,
               minWidth: MediaQuery.of(context).size.height * 0.4,
               onPressed: () {
-                registerViewModel.navigateToLogin();
+                registerViewModel.register(
+                    _emailController.text, _passwordController.text);
               },
             )
           ],
